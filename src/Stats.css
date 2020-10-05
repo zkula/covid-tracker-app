@@ -1,0 +1,44 @@
+/* .stats {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 70px 10px 10px;
+  background-color: white;
+} */
+
+.stats {
+  flex: 1;
+  cursor: pointer;
+}
+
+.stats:not(:last-child) {
+  margin-right: 15px;
+}
+
+.state__cases {
+  color: #cc1034;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.state__total {
+  color: #6c757d;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  margin-top: 15px !important;
+}
+
+.stats--selected {
+  border-top: 10px solid #009608;
+}
+.stats--green {
+  border-color: #009608;
+}
+
+.stats--blue {
+  border-color: #00c2c2;
+}
+
+.stats--red {
+  border-color: #cc1034;
+}
