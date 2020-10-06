@@ -59,7 +59,7 @@ function App() {
 
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
-
+    console.log("WORLDWIDE CODE", countryCode);
     const url =
       countryCode === "worldwide"
         ? "https://disease.sh/v3/covid-19/all"
@@ -70,8 +70,17 @@ function App() {
       .then((data) => {
         setCountry(countryCode);
         setCountryInfo(data);
-        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-        setMapZoom(4);
+        if (data.countryInfo) {
+          setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+          setMapZoom(4);
+        } else {
+          setMapCenter({
+            lat: 34.80746,
+            lng: -40.4796,
+          });
+          setMapZoom(3);
+          console.log("WORLDWIDE CLICKED", countryInfo);
+        }
       });
   };
 
